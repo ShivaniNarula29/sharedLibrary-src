@@ -6,7 +6,7 @@ node {
     env.GIT_CREDS_ID = 'downtime_github'
     env.SLACK_CHANNEL = 'java-notification'
     env.SLACK_CRED_ID = 'downtime-crew'
-    env.EMAIL_TO = 'shivani.narula.snaatak@mygurukulam.co'
+    env.EMAIL_TO = 'shivaninarula9211@gmail.com'
 
     def codeCompilation = new org.downtimecrew.template.java.codeCompilation()
     codeCompilation.call([
