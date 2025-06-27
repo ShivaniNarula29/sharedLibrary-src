@@ -26,11 +26,11 @@ def sendNotification(Map config = [:], steps) {
         def now = new Date().format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone('Asia/Kolkata'))
 
         def slackMsg = """*Build #${steps.env.BUILD_NUMBER} - ${status}*
-        *Job:* `${steps.env.JOB_NAME}`
-        *Triggered by:* ${buildTrigger}
-        *Time (IST):* ${now}
-        ${!isSuccess ? "*Failure Reason:* ${failureReason}\n*Failed Stage:* ${failedStage}" : "" }
-        *Build URL:* <${steps.env.BUILD_URL}|View Build>"""
+*Job:* `${steps.env.JOB_NAME}`
+*Triggered by:* ${buildTrigger}
+*Time (IST):* ${now}
+${!isSuccess ? "*Failure Reason:* ${failureReason}\n*Failed Stage:* ${failedStage}" : ""}
+*Build URL:* <${steps.env.BUILD_URL}|View Build>"""
 
         if (reportLinks) {
             reportLinks.each { link ->
@@ -55,7 +55,7 @@ def sendNotification(Map config = [:], steps) {
             emailBody += """
             <p><strong>Failure Reason:</strong> ${failureReason}</p>
             <p><strong>Failed Stage:</strong> ${failedStage}</p>
-        """
+            """
         }
 
         if (reportLinks) {
