@@ -6,7 +6,7 @@ import org.downtimecrew.ci.java.*
 def call(Map config = [:]) {
     def wsClean = new cleanWorkspace()
     def gitCheckOut = new checkout()
-    def javaCompile = new runJavaCompilation()
+    def javaCompile = new runJavaCodeCompilation()
     def notify = new notification()
 
     try {
