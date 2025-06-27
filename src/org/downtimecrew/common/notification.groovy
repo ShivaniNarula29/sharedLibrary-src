@@ -1,4 +1,4 @@
-package org.teamdowntimecrew.common
+package org.downtimecrew.common
 
 def sendNotification(Map config = [:], steps) {
     stage(config.stageName ?: 'Notification E-mail/Slack') {
