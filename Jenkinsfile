@@ -8,7 +8,7 @@ node {
     env.SLACK_CRED_ID = 'downtime-crew'
     env.EMAIL_TO = 'shivani.narula.snaatak@mygurukulam.co'
 
-    def codeCompilation = new org.teamdowntimecrew.template.java.codeCompilation()
+    def codeCompilation = new org.downtimecrew.template.java.codeCompilation()
     codeCompilation.call([
         gitBranch: env.GIT_BRANCH,
         gitRepoUrl: env.GIT_REPO_URL,
